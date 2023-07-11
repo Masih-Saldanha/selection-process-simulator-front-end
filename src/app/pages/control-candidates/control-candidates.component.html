@@ -1,1 +1,16 @@
-<p>control-candidates works!</p>
+<div>
+  <label for="control-candidates-input">Código do candidato: </label>
+  <input
+    #controlCandidatesInput
+    id="control-candidates-input"
+    (input)="onInput(controlCandidatesInput)"
+    [value]="codCandidato"
+    type="number"
+    placeholder="1000"
+  />
+  <div>
+    <button (click)="disqualify()">Desqualificar candidato</button>
+    <button (click)="schedule()">Qualificar candidato</button>
+    <button (click)="approve()">Aprovar candidato</button>
+  </div>
+</div>
