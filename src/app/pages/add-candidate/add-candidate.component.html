@@ -1,1 +1,24 @@
-<p>add-candidate works!</p>
+<div class="container">
+  <form
+    class="form-container"
+    [formGroup]="candidateForm"
+    (ngSubmit)="submitCandidateName()"
+    class="add-candidate-container"
+  >
+    <label for="add-candidate-input">Nome do candidato: </label>
+    <input
+      id="add-candidate-input"
+      type="text"
+      formControlName="nome"
+      placeholder="Nome"
+    />
+    <button>Enviar</button>
+  </form>
+
+  <div
+    class="error-container"
+    *ngIf="nome?.invalid && (nome?.dirty || nome?.touched)"
+  >
+    <h1 *ngIf="nome?.errors?.['required']">Campo obrigatório.</h1>
+  </div>
+</div>

@@ -1,1 +1,31 @@
-<p>show-candidate-status works!</p>
+<div class="container">
+  <form
+    class="form-container"
+    [formGroup]="candidateForm"
+    (ngSubmit)="submitCandidadateCod()"
+    class="add-candidate-container"
+  >
+    <label for="show-candidate-status-input">Código do candidato: </label>
+    <input
+      id="show-candidate-status-input"
+      type="number"
+      formControlName="codCandidato"
+      placeholder="1000"
+    />
+    <button>Enviar</button>
+  </form>
+
+  <div
+    class="error-container"
+    *ngIf="
+      codCandidato?.invalid && (codCandidato?.dirty || codCandidato?.touched)
+    "
+  >
+    <h1 *ngIf="codCandidato?.errors?.['required']">Campo obrigatório.</h1>
+    <h1 *ngIf="codCandidato?.errors?.['pattern']">
+      Digite um número inteiro válido.
+    </h1>
+  </div>
+
+  <!-- ÁREA PARA MOSTRAR STATUS -->
+</div>
