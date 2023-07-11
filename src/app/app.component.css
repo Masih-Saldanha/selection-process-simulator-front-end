@@ -1,0 +1,25 @@
+.nav {
+  background-color: cornflowerblue;
+  padding: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+  font-weight: bold;
+}
+.nav .active {
+  color: #f00;
+}
+.nav a {
+  color: #000;
+  margin: 0.3rem;
+
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: burlywood;
+
+  text-align: center;
+  text-decoration: none;
+  font-style: normal;
+}
