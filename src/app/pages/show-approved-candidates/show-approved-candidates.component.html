@@ -1,1 +1,21 @@
-<p>show-approved-candidates works!</p>
+<div class="container">
+  <div class="advanced-search-container">
+    <label for="advanced-search">Busca avançada: </label>
+    <input id="advanced-search" [(ngModel)]="filterByName" type="text" />
+  </div>
+
+  <table class="table-container">
+    <thead>
+      <tr>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let nome of aprovados | filterApprovedListByName : filterByName"
+      >
+        <td>{{ nome }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

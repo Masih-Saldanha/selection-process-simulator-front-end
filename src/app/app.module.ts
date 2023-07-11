@@ -8,7 +8,8 @@ import { ShowCandidateStatusComponent } from './pages/show-candidate-status/show
 import { ShowApprovedCandidatesComponent } from './pages/show-approved-candidates/show-approved-candidates.component';
 import { ControlCandidatesComponent } from './pages/control-candidates/control-candidates.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterApprovedListByNamePipe } from './filter-approved-list-by-name.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ShowCandidateStatusComponent,
     ShowApprovedCandidatesComponent,
     ControlCandidatesComponent,
-    HomeComponent
+    HomeComponent,
+    FilterApprovedListByNamePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
