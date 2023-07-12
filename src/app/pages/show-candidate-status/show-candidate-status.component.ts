@@ -13,10 +13,12 @@ export class ShowCandidateStatusComponent {
     private fb: FormBuilder,
     private service: AppService
   ) { }
+
   candidatoStatus = "";
   candidateForm = this.fb.group({
     codCandidato: ['', [Validators.required, this.integerValidator()]],
   });
+  codCandidatoComparator: string | number = "";
 
   get codCandidato() {
     return this.candidateForm.get('codCandidato');
@@ -41,9 +43,11 @@ export class ShowCandidateStatusComponent {
     const observer: Observer<string> = {
       next: res => {
         this.candidatoStatus = res;
+        this.codCandidatoComparator = codCandidatoValue;
       },
       error: e => {
         this.candidatoStatus = e.error;
+        this.codCandidatoComparator = codCandidatoValue;
       },
       complete: () => { }
     }

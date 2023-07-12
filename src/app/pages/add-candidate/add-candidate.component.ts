@@ -18,6 +18,7 @@ export class AddCandidateComponent {
   candidateForm = this.fb.group({
     nome: ['', [Validators.required]],
   });
+  nomeComparator: string | number = "";
 
   get nome() {
     return this.candidateForm.get('nome');
@@ -32,9 +33,11 @@ export class AddCandidateComponent {
     const observer: Observer<number> = {
       next: res => {
         this.codCandidato = res;
+        this.nomeComparator = nomeValue;
       },
       error: e => {
         this.codCandidato = e.error;
+        this.nomeComparator = nomeValue;
       },
       complete: () => { }
     }

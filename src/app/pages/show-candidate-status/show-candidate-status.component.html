@@ -15,12 +15,7 @@
     <button>Enviar</button>
   </form>
 
-  <div
-    class="error-container"
-    *ngIf="
-      codCandidato?.invalid && (codCandidato?.dirty || codCandidato?.touched)
-    "
-  >
+  <div class="error-container">
     <h1 *ngIf="codCandidato?.errors?.['required']">Campo obrigatório.</h1>
     <h1 *ngIf="codCandidato?.errors?.['pattern']">
       Digite um número inteiro válido.
@@ -28,14 +23,23 @@
   </div>
 
   <div class="error-container">
-    <h1 *ngIf="candidatoStatus === 'Candidato não encontrado'">
+    <h1
+      *ngIf="
+        candidatoStatus === 'Candidato não encontrado' &&
+        codCandidato?.value === codCandidatoComparator
+      "
+    >
       {{ candidatoStatus }}
     </h1>
   </div>
 
   <div class="success-container">
     <h1
-      *ngIf="candidatoStatus && candidatoStatus !== 'Candidato não encontrado'"
+      *ngIf="
+        candidatoStatus &&
+        candidatoStatus !== 'Candidato não encontrado' &&
+        codCandidato?.value === codCandidatoComparator
+      "
     >
       Status do candidato pesquisado: {{ candidatoStatus }}
     </h1>

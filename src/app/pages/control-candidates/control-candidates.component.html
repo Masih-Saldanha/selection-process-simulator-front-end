@@ -22,7 +22,7 @@
   </div>
 
   <div class="error-container">
-    <h1 *ngIf="controlCandidatesInput.value">{{ message }}</h1>
+    <h1 *ngIf="message === 'Candidato não encontrado'">{{ message }}</h1>
   </div>
 
   <div class="success-container">
