@@ -1,28 +1,5 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.advanced-search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.advanced-search-container label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.advanced-search-container input {
-  border: 1px solid black;
-  border-radius: 8px;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .table-container {
@@ -59,34 +36,4 @@
 
 .table-container tbody tr:hover {
   background-color: azure;
-}
-
-.control-candidates-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.buttons-container button {
-  margin: 0 0.5rem;
-}
-
-.message-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.message-container h1 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: crimson;
 }
