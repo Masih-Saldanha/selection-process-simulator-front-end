@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observer } from 'rxjs';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-control-candidates',
@@ -6,33 +8,56 @@ import { Component } from '@angular/core';
   styleUrls: ['./control-candidates.component.css']
 })
 export class ControlCandidatesComponent {
+  constructor(private service: AppService) { }
+
   codCandidato: number | "" = "";
-  errorMessage = "";
+  message = "";
 
   onInput(inputElement: HTMLInputElement) {
     const value = parseInt(inputElement.value);
     if (value) {
-      this.errorMessage = "";
+      this.message = "";
     }
 
     this.codCandidato = value;
   }
 
-  disqualify() {
-    console.log(this.codCandidato);
+  private handleResponse(successMessage: string): Observer<void> {
+    return {
+      next: res => {
+        this.message = successMessage;
+      },
+      error: e => {
+        this.message = e.error;
+      },
+      complete: () => { }
+    };
+  }
 
-    // IMPLEMENTAR LÓGICA DE REQUISIÇÃO E DE MENSAGEM DE ERRO
+  disqualify() {
+    if (!this.codCandidato) {
+      return;
+    }
+
+    const observer = this.handleResponse(`Candidato com o código ${this.codCandidato} desqualificado com sucesso!`);
+    this.service.disqualify(this.codCandidato).subscribe(observer);
   }
 
   schedule() {
-    console.log(this.codCandidato);
+    if (!this.codCandidato) {
+      return;
+    }
 
-    // IMPLEMENTAR LÓGICA DE REQUISIÇÃO E DE MENSAGEM DE ERRO
+    const observer = this.handleResponse(`Candidato com o código ${this.codCandidato} qualificado com sucesso!`);
+    this.service.schedule(this.codCandidato).subscribe(observer);
   }
 
   approve() {
-    console.log(this.codCandidato);
+    if (!this.codCandidato) {
+      return;
+    }
 
-    // IMPLEMENTAR LÓGICA DE REQUISIÇÃO E DE MENSAGEM DE ERRO
+    const observer = this.handleResponse(`Candidato com o código ${this.codCandidato} aprovado com sucesso!`);
+    this.service.approve(this.codCandidato).subscribe(observer);
   }
 }
