@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observer } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -6,9 +7,29 @@ import { AppService } from 'src/app/app.service';
   templateUrl: './show-approved-candidates.component.html',
   styleUrls: ['./show-approved-candidates.component.css']
 })
-export class ShowApprovedCandidatesComponent {
+export class ShowApprovedCandidatesComponent implements OnInit {
   filterByName = "";
-  aprovados = ["Pessoa 1", "Pessoa 2", "Pessoa 3"];
+  aprovados: string[] = [];
 
   constructor(private service: AppService) { }
+
+  ngOnInit(): void {
+    this.getApprovedList();
+  }
+
+  getApprovedList() {
+    const observer: Observer<string[]> = {
+      next: res => {
+        this.aprovados = res;
+        console.log(res);
+      },
+      error: e => {
+        alert(e.error);
+        console.log(e.error);
+      },
+      complete: () => { }
+    }
+
+    this.service.approved().subscribe(observer);
+  }
 }
