@@ -26,22 +26,38 @@
 
 .table-container {
   width: 90%;
-  margin-top: 1rem;
+  border-collapse: collapse;
+  background-color: bisque;
+  border-radius: 10px;
 }
 
-.table-container th {
-  font-weight: bold;
-  background-color: cornflowerblue;
-  border: 1px solid black;
-  color: #fff;
-  padding: 0.5rem;
-  text-align: left;
-}
-
+.table-container th,
 .table-container td {
-  background-color: darkgray;
-  border: 1px solid black;
-  padding: 0.5rem;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #aaa;
+  border-radius: 0;
+}
+
+.table-container thead th {
+  background-color: cornflowerblue;
+  border-radius: 10px 10px 0 0;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+}
+
+.table-container tbody tr:nth-child(even) {
+  background-color: cornsilk;
+}
+
+.table-container .last-row td:last-child {
+  border-bottom: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.table-container tbody tr:hover {
+  background-color: #e0e0e0;
 }
 
 .control-candidates-container {

@@ -12,7 +12,11 @@
     </thead>
     <tbody>
       <tr
-        *ngFor="let nome of aprovados | filterApprovedListByName : filterByName"
+        *ngFor="
+          let nome of aprovados | filterApprovedListByName : filterByName;
+          let last = last
+        "
+        [class.last-row]="last"
       >
         <td>{{ nome }}</td>
       </tr>
