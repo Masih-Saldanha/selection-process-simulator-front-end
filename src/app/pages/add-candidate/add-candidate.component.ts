@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Observer } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AddCandidateComponent {
     private fb: FormBuilder,
     private service: AppService
   ) { }
-
+  codCandidato: string | number = "";
   candidateForm = this.fb.group({
     nome: ['', [Validators.required]],
   });
@@ -27,7 +28,17 @@ export class AddCandidateComponent {
       return;
     }
 
-    // LÓGICA DE SERVICE AQUI
-    console.log(this.candidateForm.value)
+    const nomeValue = this.nome?.value ?? "";
+    const observer: Observer<number> = {
+      next: res => {
+        this.codCandidato = res;
+      },
+      error: e => {
+        this.codCandidato = e.error;
+      },
+      complete: () => { }
+    }
+    
+    this.service.start(nomeValue).subscribe(observer);
   }
 }

@@ -10,6 +10,7 @@ import { ControlCandidatesComponent } from './pages/control-candidates/control-c
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterApprovedListByNamePipe } from './filter-approved-list-by-name.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FilterApprovedListByNamePipe } from './filter-approved-list-by-name.pip
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

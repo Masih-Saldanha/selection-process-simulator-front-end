@@ -27,5 +27,10 @@
     </h1>
   </div>
 
-  <!-- ÁREA PARA MOSTRAR STATUS -->
+  <h1 *ngIf="candidatoStatus === 'Candidato não encontrado'">
+    {{ candidatoStatus }}
+  </h1>
+  <h1 *ngIf="candidatoStatus && candidatoStatus !== 'Candidato não encontrado'">
+    Status do candidato pesquisado: {{ candidatoStatus }}
+  </h1>
 </div>

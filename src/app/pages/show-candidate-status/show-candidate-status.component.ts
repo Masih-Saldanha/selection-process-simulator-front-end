@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidatorFn, Validators } from '@angular/forms';
+import { Observer } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ShowCandidateStatusComponent {
     private fb: FormBuilder,
     private service: AppService
   ) { }
-
+  candidatoStatus = "";
   candidateForm = this.fb.group({
     codCandidato: ['', [Validators.required, this.integerValidator()]],
   });
@@ -36,7 +37,19 @@ export class ShowCandidateStatusComponent {
       console.log("Formulário Inválido!");
       return;
     }
-    // LÓGICA DE SERVICE AQUI
-    console.log(this.candidateForm.value)
+
+    const codCandidatoValue = parseInt(this.codCandidato?.value ?? "")
+    const observer: Observer<string> = {
+      next: res => {
+        this.candidatoStatus = res;
+      },
+      error: e => {
+        this.candidatoStatus = e.error;
+      },
+      complete: () => { }
+    }
+    this.service.status(codCandidatoValue).subscribe(observer);
+    
+    // console.log(this.candidateForm.value)
   }
 }

@@ -21,4 +21,15 @@
   >
     <h1 *ngIf="nome?.errors?.['required']">Campo obrigatório.</h1>
   </div>
+
+  <h1 *ngIf="codCandidato === 'Candidato já participa do processo.'">
+    {{ codCandidato }}
+  </h1>
+  <h1
+    *ngIf="
+      codCandidato && codCandidato !== 'Candidato já participa do processo.'
+    "
+  >
+    Código do candidato registrado: {{ codCandidato }}
+  </h1>
 </div>
