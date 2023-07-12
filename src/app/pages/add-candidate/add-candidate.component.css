@@ -24,18 +24,51 @@ input {
   margin-bottom: 1rem;
 }
 
+
+.myButton {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px;
+  border-radius: 10px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(68, 119, 164) 0%,
+    rgb(35, 136, 203) 50%,
+    rgb(11, 63, 117) 100%
+  );
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  border: 2px solid rgb(28, 110, 164);
+  display: inline-block;
+}
+.myButton:hover {
+  background: #4477a4;
+}
+.myButton:active {
+  background: #0b3f75;
+}
+
+
 button {
   padding: 0.5rem 1rem;
-  background-color: burlywood;
+  background: linear-gradient(to right, #1945AC 0%, #23B0E4 50%, #142A75 100%);
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: rgb(0, 0, 0) 5px 5px 10px 2px;
+  text-shadow: 2px 2px 2px #000;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: chocolate;
+  background: linear-gradient(to right, #47AF01 0%, #2BE72B 50%, #1A9008 100%);
 }
 
 .error-container {

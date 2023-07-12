@@ -1,5 +1,5 @@
 .nav {
-  background-color: cornflowerblue;
+  background: linear-gradient(to bottom, #936302 0%, #F6B006 100%);
   padding: 0.3rem;
   display: flex;
   justify-content: space-evenly;
@@ -13,21 +13,22 @@
   color: #fff;
   margin: 0.3rem;
   border: 1px solid #fff;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 10px;
-  background-color: burlywood;
+  background: linear-gradient(to right, #1945AC 0%, #23B0E4 50%, #142A75 100%);
   text-align: center;
   text-decoration: none;
   font-style: normal;
 }
 
 .nav a:hover {
-  background-color: chocolate;
+  background: linear-gradient(to right, #47AF01 0%, #2BE72B 50%, #1A9008 100%);
 }
 
 .nav a.active {
-  background-color: #fff;
-  color: #f00;
+  background: linear-gradient(to right, #47AF01 0%, #2BE72B 50%, #1A9008 100%);
+  border: 1px solid black;
+  color: darkred;
 }
 
 @media (max-width: 485px) {

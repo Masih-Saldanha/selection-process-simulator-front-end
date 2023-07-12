@@ -26,16 +26,18 @@ input {
 
 button {
   padding: 0.5rem 1rem;
-  background-color: burlywood;
+  background: linear-gradient(to right, #1945AC 0%, #23B0E4 50%, #142A75 100%);
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: rgb(0, 0, 0) 5px 5px 10px 2px;
+  text-shadow: 2px 2px 2px #000;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: chocolate;
+  background: linear-gradient(to right, #47AF01 0%, #2BE72B 50%, #1A9008 100%);
 }
 
 .error-container {
