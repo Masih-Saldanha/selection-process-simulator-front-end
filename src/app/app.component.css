@@ -1,34 +1,36 @@
 .nav {
-  background: linear-gradient(to bottom, #936302 0%, #F6B006 100%);
+  background: linear-gradient(to bottom, #936302 0%, #f6b006 100%);
   padding: 0.3rem;
   display: flex;
   justify-content: space-evenly;
   font-weight: bold;
+  box-shadow: rgb(0, 0, 0) 0px 2px 10px 2px;
 }
 
 .nav a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: rgb(0, 0, 0) 2px 2px 10px 1px;
+  text-shadow: 2px 2px 2px #000;
   color: #fff;
   margin: 0.3rem;
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 10px;
-  background: linear-gradient(to right, #1945AC 0%, #23B0E4 50%, #142A75 100%);
+  background: linear-gradient(to right, #1945ac 0%, #23b0e4 50%, #142a75 100%);
   text-align: center;
   text-decoration: none;
   font-style: normal;
 }
 
 .nav a:hover {
-  background: linear-gradient(to right, #47AF01 0%, #2BE72B 50%, #1A9008 100%);
+  background: linear-gradient(to right, #47af01 0%, #2be72b 50%, #1a9008 100%);
 }
 
 .nav a.active {
-  background: linear-gradient(to right, #47AF01 0%, #2BE72B 50%, #1A9008 100%);
+  background: linear-gradient(to right, #47af01 0%, #2be72b 50%, #1a9008 100%);
   border: 1px solid black;
-  color: darkred;
 }
 
 @media (max-width: 485px) {
