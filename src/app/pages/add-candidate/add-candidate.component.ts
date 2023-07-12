@@ -13,6 +13,7 @@ export class AddCandidateComponent {
     private fb: FormBuilder,
     private service: AppService
   ) { }
+
   codCandidato: string | number = "";
   candidateForm = this.fb.group({
     nome: ['', [Validators.required]],
@@ -38,7 +39,7 @@ export class AddCandidateComponent {
       },
       complete: () => { }
     }
-    
+
     this.service.start(nomeValue).subscribe(observer);
   }
 }

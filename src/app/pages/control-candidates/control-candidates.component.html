@@ -1,13 +1,15 @@
 <div class="control-candidates-container">
-  <label for="control-candidates-input">Código do candidato: </label>
-  <input
-    #controlCandidatesInput
-    id="control-candidates-input"
-    (input)="onInput(controlCandidatesInput)"
-    [value]="codCandidato"
-    type="number"
-    placeholder="1000"
-  />
+  <div class="control-candidates-input-container">
+    <label for="control-candidates-input">Código do candidato: </label>
+    <input
+      #controlCandidatesInput
+      id="control-candidates-input"
+      (input)="onInput(controlCandidatesInput)"
+      [value]="codCandidato"
+      type="number"
+      placeholder="1000"
+    />
+  </div>
 
   <div class="buttons-container">
     <button (click)="disqualify()">Desqualificar candidato</button>
@@ -15,7 +17,15 @@
     <button (click)="approve()">Aprovar candidato</button>
   </div>
 
-  <div class="message-container">
-    <h1 *ngIf="message">{{ message }}</h1>
+  <div class="error-container">
+    <h1 *ngIf="!codCandidato && isInputInvalid">Campo obrigatório.</h1>
+  </div>
+
+  <div class="error-container">
+    <h1 *ngIf="controlCandidatesInput.value">{{ message }}</h1>
+  </div>
+
+  <div class="success-container">
+    <h1 *ngIf="message !== 'Candidato não encontrado'">{{ message }}</h1>
   </div>
 </div>

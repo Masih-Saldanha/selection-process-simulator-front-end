@@ -11,12 +11,16 @@ export class ControlCandidatesComponent {
   constructor(private service: AppService) { }
 
   codCandidato: number | "" = "";
+  isInputInvalid = false;
   message = "";
 
   onInput(inputElement: HTMLInputElement) {
     const value = parseInt(inputElement.value);
     if (value) {
+      this.isInputInvalid = false;
       this.message = "";
+    } else {
+      this.isInputInvalid = true;
     }
 
     this.codCandidato = value;

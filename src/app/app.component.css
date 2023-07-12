@@ -2,24 +2,41 @@
   background-color: cornflowerblue;
   padding: 0.3rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  
   font-weight: bold;
 }
-.nav .active {
-  color: #f00;
-}
-.nav a {
-  color: #000;
-  margin: 0.3rem;
 
-  border: 1px solid black;
+.nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #fff;
   border-radius: 4px;
   padding: 10px;
   background-color: burlywood;
-
   text-align: center;
   text-decoration: none;
   font-style: normal;
+}
+
+.nav a:hover {
+  background-color: chocolate;
+}
+
+.nav a.active {
+  background-color: #fff;
+  color: #f00;
+}
+
+@media (max-width: 485px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    flex: 1 1 100%;
+    margin: 0.3rem;
+  }
 }

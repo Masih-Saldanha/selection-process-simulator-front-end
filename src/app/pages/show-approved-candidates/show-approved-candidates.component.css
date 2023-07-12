@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.advanced-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.advanced-search-container label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.advanced-search-container input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.table-container th {
+  font-weight: bold;
+  background-color: cornflowerblue;
+  border: 1px solid black;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.table-container td {
+  background-color: darkgray;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.control-candidates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.buttons-container button {
+  margin: 0 0.5rem;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.message-container h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: crimson;
+}
