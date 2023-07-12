@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observer } from 'rxjs';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-control-candidates',

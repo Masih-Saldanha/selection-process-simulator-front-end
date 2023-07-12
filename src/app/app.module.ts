@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { AddCandidateComponent } from './pages/add-candidate/add-candidate.component';
 import { ShowCandidateStatusComponent } from './pages/show-candidate-status/show-candidate-status.component';
@@ -9,7 +9,7 @@ import { ShowApprovedCandidatesComponent } from './pages/show-approved-candidate
 import { ControlCandidatesComponent } from './pages/control-candidates/control-candidates.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FilterApprovedListByNamePipe } from './filter-approved-list-by-name.pipe';
+import { FilterApprovedListByNamePipe } from './pipes/filter-approved-list-by-name.pipe';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
