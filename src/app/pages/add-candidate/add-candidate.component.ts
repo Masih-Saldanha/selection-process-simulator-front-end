@@ -25,7 +25,6 @@ export class AddCandidateComponent {
 
   submitCandidateName(): void {
     if (this.candidateForm.invalid) {
-      console.log("Formulário inválido!");
       return;
     }
 

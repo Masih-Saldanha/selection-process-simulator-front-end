@@ -34,7 +34,6 @@ export class ShowCandidateStatusComponent {
 
   submitCandidadateCod(): void {
     if (this.candidateForm.invalid) {
-      console.log("Formulário Inválido!");
       return;
     }
 
@@ -49,7 +48,5 @@ export class ShowCandidateStatusComponent {
       complete: () => { }
     }
     this.service.status(codCandidatoValue).subscribe(observer);
-    
-    // console.log(this.candidateForm.value)
   }
 }

@@ -21,11 +21,9 @@ export class ShowApprovedCandidatesComponent implements OnInit {
     const observer: Observer<string[]> = {
       next: res => {
         this.aprovados = res;
-        console.log(res);
       },
       error: e => {
         alert(e.error);
-        console.log(e.error);
       },
       complete: () => { }
     }
